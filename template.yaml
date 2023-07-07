@@ -331,7 +331,7 @@ Resources:
   ArtifactBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub artifact-bucket-${AWS::StackName}
+      BucketName: !Sub artifact-bucket-${AWS::StackName}-${AWS::AccountId}
       VersioningConfiguration:
         Status: Enabled
       BucketEncryption:
