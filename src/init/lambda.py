@@ -36,7 +36,7 @@ def handler(event, context):
     log.info("Received event: %s", json.dumps(event))
     release = event['release']
     log.info(f'Processing items release: {release}')
-    tasks = event['tasks']
+    tasks = event['tasks'] if 'tasks' in event else None
     services = event['services']
     if len(services) == 0:
         message = 'No services found for deployment'
